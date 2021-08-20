@@ -11,7 +11,7 @@ namespace PizzaStoreDetails
     public class Customers : ICustomer
     {
         public double id;
-        string fname, lname, location;
+        public string fname, lname, location;
         Gender gender;
         string path = @"..\..\..\..\DataFiles\Customers.xml";
         // string path = @"..\DataFiles\Customers.xml";
@@ -105,7 +105,7 @@ namespace PizzaStoreDetails
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Customers>));
                 for (int i = 0; i < customer.Count; i++)
                 {
-                    if (customer[i].fname == " " || customer[i].lname == " ")
+                    if (customer[i].fname == "" || customer[i].lname == "")
                     {
                         msg = "Customer Data Not Added Due to Invalid Data";
                         flag += 1;
