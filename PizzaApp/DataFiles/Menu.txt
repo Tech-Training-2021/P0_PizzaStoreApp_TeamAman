@@ -1,0 +1,12 @@
+	>>>>> Vegeterian Pizza's                Small   Medium   Large
+                 
+		press<1> for CHINESE PIZZA      110rs   180rs    240rs
+		press<2> for THIN CRUST         30rs    45rs     60rs
+		press<3> for VEGGIE PARADISE    50rs    70rs     90rs
+		press<4> for MEXICAN GREEWAVE   80rs    150rs    250rs
+
+	>>>>> Non-Vegeterian Pizza's                     Small   Medium   Large
+
+		press<5> for CHICKEN DOMINATOR PIZZA     50rs    70rs     115rs
+		press<6> for CHICKEN SAUSAGE PIZZA       110rs   210rs    380rs
+		press<7> for CHICKEN GOLDEN              130rs   280rs    450rs
