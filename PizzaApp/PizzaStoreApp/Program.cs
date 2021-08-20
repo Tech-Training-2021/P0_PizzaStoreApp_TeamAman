@@ -11,7 +11,8 @@ namespace PizzaStoreApp
         {
             Customers customer = new Customers();
             List<Customers> listCustomer = customer.InitCustomer();
-            customer.AddInitCustomer(listCustomer);
+            string ConfirmMsg = customer.AddInitCustomer(listCustomer);
+            Console.WriteLine(ConfirmMsg);
 
             Inventory inventoryObj = new Inventory();
             var Inventorydict = inventoryObj.InitInventory();

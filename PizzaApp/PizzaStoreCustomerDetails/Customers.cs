@@ -94,15 +94,41 @@ namespace PizzaStoreDetails
         /// </summary>
         /// <param name="customer"></param>
         //adding default customers
-        public void AddInitCustomer(List<Customers> customer)
+        public string AddInitCustomer(List<Customers> customer)
         {
-                using // FileStream file = new FileStream(path, FileMode.OpenOrCreate);
-                StreamWriter writer = new StreamWriter(path);
+            int flag = 0;
+            string msg = "Default Data Added to customer.xml file";
+            StreamWriter writer = null;
+            try
+            {
+                writer = new StreamWriter(path);
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Customers>));
-                serializer.Serialize(writer, customer);
+                for (int i = 0; i < customer.Count; i++)
+                {
+                    if (customer[i].fname == " " || customer[i].lname == " ")
+                    {
+                        msg = "Customer Data Not Added Due to Invalid Data";
+                        flag += 1;
+                    }
+                }
+                if (flag == 0)
+                {
+                    serializer.Serialize(writer, customer);
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine("File Not Found = " + e.Message);
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                Console.WriteLine("Directory Not Found = " + e.Message);
+            }
+            finally
+            {
                 writer.Close();
-            
-            Console.WriteLine("Default Data Added to customer.xml file");
+            }
+            return msg;
         }
 
         /// <summary>
